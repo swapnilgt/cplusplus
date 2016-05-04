@@ -1,7 +1,7 @@
-all: exec.out
+all: a.out
 
-exec.out: main.o mysorting.o myutils.o
-	g++ main.o mysorting.o myutils.o -o exec.out
+a.out: myutils.o mysorting.o main.o
+	g++ main.o myutils.o mysorting.o -o a.out
 
 main.o: main.cpp
 	g++ -c main.cpp
