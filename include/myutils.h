@@ -5,5 +5,6 @@
 #define __MYUTILS_H_INCLUDED__ // define it.
 
 void swap(int &, int &);
+void printIntArr(int *, int);
 
 #endif

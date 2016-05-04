@@ -60,7 +60,8 @@ void Sorting::insertionSort(int *arr, int l) {
 	for (int i = 1; i < l; i++) {
 		int j = i - 1;
 		int val = arr[i];
-		while(j >= 0 && arr[i] < arr[j]) {
+		cout << "j = " << j << endl;
+		while(j >= 0 && val < arr[j]) {
 			arr[j+1] = arr[j];
 			j--;
 		}
