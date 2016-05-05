@@ -18,6 +18,7 @@ class Sorting {
 		static void bubbleSort(int *, int);
 		static void selectionSort(int *, int);
 		static void insertionSort(int *, int);
+		template <typename T, typename Func> static void mergeSort(T *, int, Func);
 };
 
 #endif

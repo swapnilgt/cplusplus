@@ -6,9 +6,10 @@ This class has the functions for all the sorting methods.
 */
 class Sorting {
 	public:
-		static void bubbleSort(int *arr, int l);
-		static void selectionSort(int *arr, int l);
-		static void insertionSort(int *arr, int l);
+		static void bubbleSort(int *, int);
+		static void selectionSort(int *, int);
+		static void insertionSort(int *, int);
+		template <typename T, typename Func> static void mergeSort(T *,int, Func);
 };
 
 
@@ -66,8 +67,29 @@ void Sorting::insertionSort(int *arr, int l) {
 			j--;
 		}
 		arr[j+1] = val;
-		printIntArr(arr, l);
 	}
+}
+
+template <typename T, typename Func> void Sorting::mergeSort(T *arr, int l, Func compar) {
+	// if the lengh of the array is 1, it is already sorted. Case, when the array is
+	// empty
+	if (l <= 1) {
+		return;
+	}
+
+	// else, we divide the arrays and recurse..
+	T *left = new T[l/2];
+	T *right = new T[l - l/2];
+
+	// copying the values into the left and the right arrays..
+	memcpy(left, arr, l/2 * sizeof(T));
+	memcpy(right, arr + l/2, (l - l/2) * sizeof(T));
+
+	// running merge sort on the lef tand the right arrays separately ..
+	mergeSort(left, l/2, compar);
+	mergeSort(right, l - l/2, compar);
+
+	merge(arr, left, l/2, right, l - l/2, compar);
 }
 
 

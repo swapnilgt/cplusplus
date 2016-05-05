@@ -6,5 +6,7 @@
 
 void swap(int &, int &);
 void printIntArr(int *, int);
+void mergeIntArr(int[], int[], int, int[], int);
+template <typename T, typename Func> void merge(T[], T[], int, T[], int, Func);
 
 #endif
