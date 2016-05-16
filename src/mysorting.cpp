@@ -1,5 +1,6 @@
 #include<iostream>
 #include<myutils.h>
+#include<cstring>
 using namespace std;
 /*!
 This class has the functions for all the sorting methods.
@@ -9,7 +10,8 @@ class Sorting {
 		static void bubbleSort(int *, int);
 		static void selectionSort(int *, int);
 		static void insertionSort(int *, int);
-		template <typename T, typename Func> static void mergeSort(T *,int, Func);
+		//template <typename T, typename Func> static void mergeSort(T *, int, Func);
+		static void mergeSort(int *, int);
 };
 
 
@@ -70,7 +72,7 @@ void Sorting::insertionSort(int *arr, int l) {
 	}
 }
 
-template <typename T, typename Func> void Sorting::mergeSort(T *arr, int l, Func compar) {
+void Sorting::mergeSort(int *arr, int l) {
 	// if the lengh of the array is 1, it is already sorted. Case, when the array is
 	// empty
 	if (l <= 1) {
@@ -78,18 +80,18 @@ template <typename T, typename Func> void Sorting::mergeSort(T *arr, int l, Func
 	}
 
 	// else, we divide the arrays and recurse..
-	T *left = new T[l/2];
-	T *right = new T[l - l/2];
+	int *left = new int[l/2];
+	int *right = new int[l - l/2];
 
 	// copying the values into the left and the right arrays..
-	memcpy(left, arr, l/2 * sizeof(T));
-	memcpy(right, arr + l/2, (l - l/2) * sizeof(T));
+	memcpy(left, arr, l/2 * sizeof(int));
+	memcpy(right, arr + l/2, (l - l/2) * sizeof(int));
 
 	// running merge sort on the lef tand the right arrays separately ..
-	mergeSort(left, l/2, compar);
-	mergeSort(right, l - l/2, compar);
+	mergeSort(left, l/2);
+	mergeSort(right, l - l/2);
 
-	merge(arr, left, l/2, right, l - l/2, compar);
+	mergeIntArr(arr, left, l/2, right, l - l/2);
 }
 
 

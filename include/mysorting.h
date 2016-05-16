@@ -9,7 +9,7 @@
 
 // =================================
 // include dependencies
-
+#include<myutils.h>
 // =================================
 // the actual class
 
@@ -18,7 +18,12 @@ class Sorting {
 		static void bubbleSort(int *, int);
 		static void selectionSort(int *, int);
 		static void insertionSort(int *, int);
-		template <typename T, typename Func> static void mergeSort(T *, int, Func);
+		//template <typename T, typename Func> static void mergeSort(T *, int, Func);
+		static void mergeSort(int *, int);
 };
+
+//Sorting::mergeSort(T *, int, );
+
+//template static void Sorting::mergeSort<int, CompareInt>(int *, int, CompareInt);
 
 #endif

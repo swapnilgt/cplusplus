@@ -7,6 +7,15 @@
 void swap(int &, int &);
 void printIntArr(int *, int);
 void mergeIntArr(int[], int[], int, int[], int);
-template <typename T, typename Func> void merge(T[], T[], int, T[], int, Func);
+//template <typename T, typename Func> void merge(T[], T[], int, T[], int, Func);
 
+// functor for comparing he integers
+/*struct CompareInt {
+	int operator() (int a, int b) {
+		return a-b;
+	}
+};*/
+
+/*template void merge<int, CompareInt>(int[], int[], int, int[], int, CompareInt);
+*/
 #endif

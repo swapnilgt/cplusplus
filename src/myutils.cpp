@@ -53,7 +53,7 @@ void mergeIntArr(int t[], int first[], int fL, int sec[], int sL) {
 /*!
  * Function to print an integer array.
  */
-template <typename T, typename Func> void merge(T t[], T first[], int fL, T sec[], int sL, Func compar) {
+/*template <typename T, typename Func> void merge(T t[], T first[], int fL, T sec[], int sL, Func compar) {
 
 	int i = 0;
 	int j = 0;
@@ -81,4 +81,4 @@ template <typename T, typename Func> void merge(T t[], T first[], int fL, T sec[
 		memcpy(t + i, sec + k, sizeof(T));
 		i++; k++;
 	}
-}
+}*/
